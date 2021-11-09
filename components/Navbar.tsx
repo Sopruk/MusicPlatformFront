@@ -1,4 +1,7 @@
+/* eslint-disable react/jsx-key */
 import React from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link'
 import clsx from 'clsx';
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -18,9 +21,14 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 
-const drawerWidth = 240;
+const menuItems = [
+    {text: "Main", href: "/"},
+    {text: "Tracks", href: "/tracks"},
+    {text: "Albums", href: "/albums"},
+]
 
 export default function Navbar() {
+  const router = useRouter()
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -63,11 +71,13 @@ export default function Navbar() {
           </IconButton>
         </div>
         <List>
-          {['Main Page', 'Ttaks list', 'Albums list'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
+          {menuItems.map(({text, href}, index) => (
+            <Link href={href} key={index}>
+                <ListItem button >
+                    <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                    <ListItemText primary={text} />
+                </ListItem>
+            </Link>
           ))}
         </List>
       </Drawer>
