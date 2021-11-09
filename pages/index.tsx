@@ -5,12 +5,14 @@ import MainLayout from "../layouts/MainLayout";
 const Index = () => {
     return(<>
     <Navbar/>
-    <div className="center">
+    
         <MainLayout>
+        <div className={"center"}>
             <h1>Добро пожаловать!</h1>
             <h3>Здесь только лучшие треки!</h3>
+            </div>
         </MainLayout>
-    </div>
+    
     <style jsx>
         {
             `.center{

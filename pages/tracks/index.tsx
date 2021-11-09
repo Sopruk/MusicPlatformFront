@@ -1,12 +1,13 @@
 import { Box, Button, Card, Grid } from '@material-ui/core'
 import { useRouter } from 'next/router'
 import React from 'react'
+import TrackList from '../../components/TrackList';
 import MainLayout from '../../layouts/MainLayout'
 import { ITrack } from '../../types/track';
 
 function Index() {
     const router = useRouter();
-    const track: ITrack[] = [
+    const tracks: ITrack[] = [
         {_id:'1', name:'track_1', artist:'artist_1', text:'some text', listens:5, audio:'', picture:'', comments:[{_id:'1', text:'some comment', username:'user_1'}] },
         {_id:'2', name:'track_2', artist:'artist_1', text:'some text', listens:5, audio:'', picture:'', comments:[{_id:'1', text:'some comment', username:'user_1'}] }
     ] 
@@ -20,6 +21,7 @@ function Index() {
                             <Button onClick={()=>router.push("/tracks/create")}>Download</Button>
                         </Grid>
                     </Box>
+                    <TrackList tracks={tracks}/>
                 </Card>
             </Grid>
         </MainLayout>
