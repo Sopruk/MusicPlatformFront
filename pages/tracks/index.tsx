@@ -8,8 +8,8 @@ import { ITrack } from '../../types/track';
 function Index() {
     const router = useRouter();
     const tracks: ITrack[] = [
-        {_id:'1', name:'track_1', artist:'artist_1', text:'some text', listens:5, audio:'', picture:'', comments:[{_id:'1', text:'some comment', username:'user_1'}] },
-        {_id:'2', name:'track_2', artist:'artist_1', text:'some text', listens:5, audio:'', picture:'', comments:[{_id:'1', text:'some comment', username:'user_1'}] }
+        {_id:'1', name:'track_1', artist:'artist_1', text:'some text', listens:5, audio:'', picture:'https://cdnimg.rg.ru/pril/article/201/86/95/55p_gus-obtr_1000.jpg', comments:[{_id:'1', text:'some comment', username:'user_1'}] },
+        {_id:'2', name:'track_2', artist:'artist_1', text:'some text', listens:5, audio:'', picture:'https://cdnimg.rg.ru/pril/article/201/86/95/55p_gus-obtr_1000.jpg', comments:[{_id:'1', text:'some comment', username:'user_1'}] }
     ] 
     return (
         <MainLayout>
