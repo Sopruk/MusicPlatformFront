@@ -5,7 +5,7 @@ import React from 'react'
 interface StepWrapperProps{
     activeStep: number
 }
-const steps = ["Treck informations", "Track Label", "FIle track"]
+const steps = ["Treck informations", "Picture upload", "Audio upload"]
 const StepWrapper: React.FC<StepWrapperProps> = ({activeStep, children}) => {
     return (
         <Container>

@@ -6,6 +6,8 @@ import MainLayout from '../../layouts/MainLayout'
 
 const Create = () => {
     const [activeStep, setActiveStep] = useState(0);
+    const [picture, setPicture] = useState(null)
+    const [audio, setAudio] = useState(null)
     const back = () =>{
         setActiveStep(prev => prev - 1)
     }
@@ -41,8 +43,14 @@ const Create = () => {
             }
             {
                 activeStep == 1 && 
-                <FileUpload file="" setFile={()=>({})} accept="image/*" >
-                    <Button variant="outlined">Upload Img</Button>
+                <FileUpload setFile={setPicture} accept="image/*" >
+                    <Button variant="outlined">Upload Image</Button>
+                </FileUpload>
+            }
+            {
+                activeStep == 2 && 
+                <FileUpload setFile={setAudio} accept="audio/*" >
+                    <Button variant="outlined">Upload Audio</Button>
                 </FileUpload>
             }
             </StepWrapper>
