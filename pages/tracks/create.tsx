@@ -1,4 +1,4 @@
-import { Button, Grid } from '@material-ui/core'
+import { Button, Grid, TextField } from '@material-ui/core'
 import React, { useState } from 'react'
 import StepWrapper from '../../components/StepWrapper'
 import MainLayout from '../../layouts/MainLayout'
@@ -16,7 +16,28 @@ const Create = () => {
     return (
         <MainLayout>
             <StepWrapper activeStep={activeStep}>
-            <h1>Loading tracks- {activeStep}</h1>
+            {
+                activeStep == 0 &&
+                <Grid container direction="column" style={{padding:20}}>
+                    <TextField 
+                        style={{marginTop:10}}
+                        label={"Track name"}
+                        variant="outlined"
+                    />
+                    <TextField 
+                        style={{marginTop:10}}
+                        label={"Artist name"}
+                        variant="outlined"
+                    />
+                    <TextField
+                        style={{marginTop:10}} 
+                        label={"Track name"}
+                        variant="outlined"
+                        multiline
+                        rows={3}
+                    />
+                </Grid>
+            }
             </StepWrapper>
             <Grid container justifyContent="space-between">
                 <Button variant="outlined" disabled={activeStep==0} onClick={back}>Prev</Button>
