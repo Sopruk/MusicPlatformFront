@@ -1,5 +1,6 @@
 import { Button, Grid, TextField } from '@material-ui/core'
 import React, { useState } from 'react'
+import FileUpload from '../../components/FileUpload'
 import StepWrapper from '../../components/StepWrapper'
 import MainLayout from '../../layouts/MainLayout'
 
@@ -37,6 +38,12 @@ const Create = () => {
                         rows={3}
                     />
                 </Grid>
+            }
+            {
+                activeStep == 1 && 
+                <FileUpload file="" setFile={()=>({})} accept="image/*" >
+                    <Button variant="outlined">Upload Img</Button>
+                </FileUpload>
             }
             </StepWrapper>
             <Grid container justifyContent="space-between">

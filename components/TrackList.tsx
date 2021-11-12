@@ -8,9 +8,6 @@ interface TrackListProps {
 }
 
 const TrackList: React.FC<TrackListProps> = ({tracks}) => {
-    useEffect(() => {
-        console.log(tracks)
-    })
     return (
         <Grid container direction='column'>
             <Box p={2}>
